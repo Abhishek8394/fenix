@@ -588,7 +588,7 @@ private fun assertMenuButton() {
 }
 
 private fun tabsCounter() =
-    mDevice.findObject(UiSelector().resourceId("$packageName:id/mozac_browser_toolbar_browser_actions"))
+    mDevice.findObject(UiSelector().description("Tabs"))
 
 private fun mediaPlayerPlayButton() =
     mDevice.findObject(
