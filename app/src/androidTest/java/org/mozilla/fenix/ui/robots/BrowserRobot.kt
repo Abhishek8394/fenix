@@ -497,7 +497,8 @@ class BrowserRobot {
         }
 
         fun openTabDrawer(interact: TabDrawerRobot.() -> Unit): TabDrawerRobot.Transition {
-            mDevice.waitNotNull(Until.findObject(By.res(("$packageName:id/counter_box"))))
+            //mDevice.waitNotNull(Until.findObject(By.res(("$packageName:id/counter_box"))))
+            tabsCounter().waitForExists(waitingTime)
             tabsCounter().click()
             mDevice.waitNotNull(Until.findObject(By.res("$packageName:id/tab_layout")))
 
@@ -587,7 +588,7 @@ private fun assertMenuButton() {
 }
 
 private fun tabsCounter() =
-    mDevice.findObject(By.res("$packageName:id/counter_box"))
+    mDevice.findObject(UiSelector().resourceId("$packageName:id/mozac_browser_toolbar_browser_actions"))
 
 private fun mediaPlayerPlayButton() =
     mDevice.findObject(
